@@ -9,7 +9,6 @@ const saveForm = () => {
   if (newValue !== '') {
     const exceptionList = JSON.parse(localStorage.getItem('exception-list'));
     exceptionList.push(newValue);
-    console.log(exceptionList)
     localStorage.setItem('exception-list', JSON.stringify(exceptionList));
   }
 };
@@ -23,9 +22,9 @@ JSON.parse(localStorage.getItem('exception-list')).forEach((item) => {
 document.getElementById('exceptions').appendChild(ul);
 const deleteButton = document.getElementById("delete");
 deleteButton.addEventListener("click", deleteform)
-function deleteform(){
+function deleteform () {
   const arr = JSON.parse(localStorage.getItem("exception-list"));
-  arr.pop ();
+  arr.pop();
   localStorage.setItem("exception-list",JSON.stringify(arr));
   location.reload();
 }
