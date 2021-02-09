@@ -10,6 +10,7 @@ const saveForm = () => {
     const exceptionList = JSON.parse(localStorage.getItem('exception-list'));
     exceptionList.push(newValue);
     localStorage.setItem('exception-list', JSON.stringify(exceptionList));
+    location.reload();
   }
 };
 saveButton.addEventListener('click', saveForm);
