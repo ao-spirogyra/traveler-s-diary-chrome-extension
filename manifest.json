@@ -1,8 +1,12 @@
 {
-  "name": "extended-browser-history",
+  "name": "SSuploader",
   "version": "1.0",
   "description": "Build an Extension!",
   "manifest_version": 2,
+  "icons": {
+    "16" : "images/sampleicon.png",
+    "48" : "images/sampleicon.png"
+  },
   "background": {
     "scripts":["src/background.js"],
     "persistent": true
@@ -10,5 +14,9 @@
   "permissions": [
     "tabs"
   ],
-  "options_page": "options.html"
+  "options_page": "options.html",
+  "browser_action": {
+    "default_icon": "images/sampleicon.png",
+    "default_title": "SSuploader"
+  }
 }
