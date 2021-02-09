@@ -21,6 +21,4 @@ jobs:
       - run: npm install
 
       # Run ESLint
-      - name: Run eslint
-        uses: eslint/github-action@v0
-        run: npm run eslint
+      - run: npm run eslint
