@@ -1,0 +1,41 @@
+{
+  "plugins": [],
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {},
+  "env": {"browser": true, "es2020": true, "webextensions": true},
+  "rules": {
+    "array-bracket-spacing": ["error", "never"],
+    "arrow-spacing": ["error", { "before": true, "after": true }],
+    "block-spacing": ["error", "always"],
+    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "comma-style": ["error", "last"],
+    "eol-last": "error",
+    "eqeqeq": ["error", "always", { "null": "ignore" }],
+    "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
+    "keyword-spacing": ["error", { "before": true, "after": true }],
+    "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+    "quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": false }],
+    "semi": ["error", "always"],
+    "no-var": "error",
+    "no-multiple-empty-lines": "error",
+    "no-unused-vars": ["error", { "args": "none" }],
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "no-empty": ["error", { "allowEmptyCatch": true }],
+    "arrow-parens": ["error", "always"]
+  },
+  "globals": {
+    "Keen": false,
+    "StripeCheckout": false,
+    "process": true
+  },
+  "overrides": [
+  ]
+}
