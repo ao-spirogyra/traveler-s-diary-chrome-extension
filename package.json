@@ -1,0 +1,23 @@
+{
+  "name": "extended-browser-history-chrome-extension",
+  "version": "1.0.0",
+  "description": "オプションで例外を追加できます",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint --ext .ts,.js --fix **"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ao-spirogyra/extended-browser-history-chrome-extension.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ao-spirogyra/extended-browser-history-chrome-extension/issues"
+  },
+  "homepage": "https://github.com/ao-spirogyra/extended-browser-history-chrome-extension#readme",
+  "dependencies": {
+    "eslint": "^7.19.0"
+  }
+}
