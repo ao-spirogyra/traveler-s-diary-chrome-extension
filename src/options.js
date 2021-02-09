@@ -3,7 +3,6 @@ const saveButton = document.getElementById('save');
 // localStorage.removeItem("exception-list")
 if (!localStorage.getItem('exception-list')) {
   localStorage.setItem('exception-list', JSON.stringify([]));
-} else {
 }
 const saveForm = () => {
   const newValue = form.value;

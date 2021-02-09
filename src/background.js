@@ -3,7 +3,6 @@ function fetchToApp (url) {
   const notIncludedInException = exceptionList.every((exceptionUrl) => {
     return !url.startsWith(exceptionUrl);
   });
-  console.log(notIncludedInException);
   if (notIncludedInException) {
     fetch(`http://localhost:3000/puppeteer?url=${url}`, {method: 'POST', mode: 'cors'});
   }
