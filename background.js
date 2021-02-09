@@ -1,6 +1,7 @@
 function fetchToApp (url) {
   const exceptionList = JSON.parse(localStorage.getItem("exception-list"))
-  if (exceptionList.include(url)) return
+  console.log(exceptionList[0])
+  if (exceptionList.includes(url)) return
   fetch(`http://localhost:3000/puppeteer?url=${url}`, {method: "POST", mode: 'cors'});
   
   
