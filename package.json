@@ -5,7 +5,7 @@
   "main": "background.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "eslint --ext .ts,.js --fix **"
+    "eslint": "eslint --ext .js --fix src/**"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/ao-spirogyra/extended-browser-history-chrome-extension#readme",
   "dependencies": {
+    "@babel/eslint-parser": "^7.12.13",
     "eslint": "^7.19.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-plugin": "^7.12.13",
+    "eslint-plugin-filenames": "^1.3.2"
   }
 }
