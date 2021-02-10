@@ -6,7 +6,7 @@ function fetchToApp (url) {
   const access_token = localStorage.getItem('traveller\'s-dialy-token')
   const json = { accessToken: access_token }
   if (notIncludedInException) {
-    fetch(`http://localhost:3000/puppeteer?url=${url}`, {
+    fetch(`https://dry-thicket-62282.herokuapp.com/puppeteer?url=${url}`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
