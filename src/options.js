@@ -28,3 +28,14 @@ function deleteform () {
   localStorage.setItem("exception-list",JSON.stringify(arr));
   location.reload();
 }
+
+const onOauthButtonClicked = ()=> {
+  const clientId = '4d9d6c636a9c5e9dbcdacdfc9e318daa8d7403d925f30868e7563dadb7ac093f'
+  const redirect_uri = 'chrome-extension://dcdnegmkmmekdenamheodldpfopcbgnc/redirect.html'
+  location.href = `https://api.gyazo.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirect_uri}&response_type=code`
+}
+
+
+oauthButton = document.getElementById('oauth');
+oauthButton.addEventListener('click', onOauthButtonClicked);
+
