@@ -35,7 +35,13 @@ const onOauthButtonClicked = ()=> {
   location.href = `https://api.gyazo.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirect_uri}&response_type=code`
 }
 
-
-oauthButton = document.getElementById('oauth');
+const oauthButton = document.getElementById('oauth');
 oauthButton.addEventListener('click', onOauthButtonClicked);
 
+const token = document.getElementById('access-token')
+const onSaveTokenButtonClicked = () => {
+  localStorage.setItem('traveller\'s-dialy-token', token.value)
+}
+
+const saveTokenButton = document.getElementById('save-acess-token')
+saveTokenButton.addEventListener('click', onSaveTokenButtonClicked)
