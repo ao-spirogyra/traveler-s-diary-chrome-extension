@@ -30,7 +30,7 @@ function deleteform () {
 }
 
 const onOauthButtonClicked = ()=> {
-  const clientId = '4d9d6c636a9c5e9dbcdacdfc9e318daa8d7403d925f30868e7563dadb7ac093f'
+  const clientId = 'f25d2754cabdca35725e0bc8611f5d609fbbf334198c68476c6edda718ec6e12'
   const redirect_uri = 'chrome-extension://dcdnegmkmmekdenamheodldpfopcbgnc/redirect.html'
   location.href = `https://api.gyazo.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirect_uri}&response_type=code`
 }
