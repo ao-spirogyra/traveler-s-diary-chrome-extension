@@ -9,6 +9,8 @@
   },
   "browser_action": {},
   "permissions": [
-    "tabs"
+    "tabs",
+    "identity",
+    "https://api.gyazo.com/"
   ]
 }

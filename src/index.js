@@ -30,10 +30,50 @@ function deleteform () {
   location.reload();
 }
 
+const getClientSecret = async () => {
+  let clientSecret
+  await fetch('https://dry-thicket-62282.herokuapp.com/secret', {
+    method: 'GET',
+    mode: 'cors'
+  }).then(async (res) => {
+    const response = await res.json()
+    clientSecret = response["clientSecret"]
+  })
+  return clientSecret
+}
+
 const onOauthButtonClicked = ()=> {
-  const clientId = 'f25d2754cabdca35725e0bc8611f5d609fbbf334198c68476c6edda718ec6e12'
-  const redirect_uri = 'https://dry-thicket-62282.herokuapp.com/token'
-  location.href = `https://api.gyazo.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirect_uri}&response_type=code`
+  const clientId = 'f25d2754cabdca35725e0bc8611f5d609fbbf334198c68476c6edda718ec6e12';
+  const redirectUri = 'https://dcdnegmkmmekdenamheodldpfopcbgnc.chromiumapp.org';
+  chrome.identity.launchWebAuthFlow({
+    url: `https://api.gyazo.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`,
+    interactive: true
+  }, async (responseUrl) => {
+    const url = new URL(responseUrl);
+    const params = url.searchParams;
+    const code = params.get('code');
+    const clientSecret = getClientSecret();
+    const grantType = 'authorization_code';
+    const body = JSON.stringify({
+      code: code,
+      client_id: clientId,
+      client_secret: clientSecret,
+      redirect_uri: redirectUri,
+      grant_type: grantType
+    });
+    await fetch('https://api.gyazo.com/oauth/token', {
+      method: 'POST',
+      body: body,
+      headers: {
+        "Content-Type": "application/json",
+      }
+    }).then( async (response) => {
+      if (response.status === 200) {
+        const res = await response.json()
+          localStorage.setItem('gyazo-access-token', res['access_token'])
+      }
+    })
+  })
 }
 
 const oauthButton = document.getElementById('oauth');
