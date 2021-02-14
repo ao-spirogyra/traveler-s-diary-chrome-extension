@@ -1,9 +1,14 @@
+//
+// exception list関係
+//
+
 const form = document.getElementById('form');
 const saveButton = document.getElementById('save');
 // localStorage.removeItem("exception-list")
 if (!localStorage.getItem('exception-list')) {
   localStorage.setItem('exception-list', JSON.stringify([]));
 }
+
 const saveForm = () => {
   const newValue = form.value;
   if (newValue !== '') {
@@ -14,6 +19,7 @@ const saveForm = () => {
   }
 };
 saveButton.addEventListener('click', saveForm);
+
 const ul = document.createElement('ul');
 JSON.parse(localStorage.getItem('exception-list')).forEach((item) => {
   let li = document.createElement('li');
@@ -21,6 +27,7 @@ JSON.parse(localStorage.getItem('exception-list')).forEach((item) => {
   ul.appendChild(li);
 });
 document.getElementById('exceptions').appendChild(ul);
+
 const deleteButton = document.getElementById("delete");
 deleteButton.addEventListener("click", deleteform)
 function deleteform () {
@@ -29,6 +36,10 @@ function deleteform () {
   localStorage.setItem("exception-list",JSON.stringify(arr));
   location.reload();
 }
+
+//
+// gyazo連携関係
+//
 
 const getClientSecret = async () => {
   let clientSecret
