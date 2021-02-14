@@ -78,11 +78,3 @@ const onOauthButtonClicked = ()=> {
 
 const oauthButton = document.getElementById('oauth');
 oauthButton.addEventListener('click', onOauthButtonClicked);
-
-const token = document.getElementById('access-token')
-const onSaveTokenButtonClicked = () => {
-  localStorage.setItem('traveller\'s-dialy-token', token.value)
-}
-
-const saveTokenButton = document.getElementById('save-acess-token')
-saveTokenButton.addEventListener('click', onSaveTokenButtonClicked)
