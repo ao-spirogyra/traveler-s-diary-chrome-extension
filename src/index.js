@@ -52,7 +52,7 @@ const onOauthButtonClicked = ()=> {
     const url = new URL(responseUrl);
     const params = url.searchParams;
     const code = params.get('code');
-    const clientSecret = getClientSecret();
+    const clientSecret = await getClientSecret();
     const grantType = 'authorization_code';
     const body = JSON.stringify({
       code: code,
