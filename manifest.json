@@ -7,6 +7,7 @@
     "scripts":["src/background.js"],
     "persistent": true
   },
+  "key": "dcdnegmkmmekdenamheodldpfopcbgnc",
   "browser_action": {},
   "permissions": [
     "tabs",
