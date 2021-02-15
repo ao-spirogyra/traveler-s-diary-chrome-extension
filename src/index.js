@@ -55,7 +55,7 @@ const getClientSecret = async () => {
 
 const onLinkButtonClicked = () => {
   const clientId = 'f25d2754cabdca35725e0bc8611f5d609fbbf334198c68476c6edda718ec6e12';
-  const redirectUri = 'https://dcdnegmkmmekdenamheodldpfopcbgnc.chromiumapp.org';
+  const redirectUri = 'https://kjbmkglohpkfhmdmalpiimojcklgpibp.chromiumapp.org';
   chrome.identity.launchWebAuthFlow({
     url: `https://api.gyazo.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`,
     interactive: true
