@@ -4,9 +4,12 @@ function fetchToApp (url) {
     return !url.startsWith(exceptionUrl);
   });
   const access_token = localStorage.getItem('gyazo-access-token')
-  const json = { accessToken: access_token }
+  const json = {
+    accessToken: access_token,
+    url: url
+  }
   if (notIncludedInException) {
-    fetch(`https://dry-thicket-62282.herokuapp.com/puppeteer?url=${url}`, {
+    fetch(`https://dry-thicket-62282.herokuapp.com/puppeteer`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
