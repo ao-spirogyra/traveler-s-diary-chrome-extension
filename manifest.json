@@ -1,14 +1,21 @@
 {
-  "name": "extended-browser-history",
+  "name": "traveller's dialy",
   "version": "1.0",
   "description": "Build an Extension!",
   "manifest_version": 2,
+  "icons": {
+    "16" : "images/sampleicon.png",
+    "48" : "images/sampleicon.png"
+  },
   "background": {
     "scripts":["src/background.js"],
     "persistent": true
   },
   "key": "dcdnegmkmmekdenamheodldpfopcbgnc",
-  "browser_action": {},
+  "browser_action": {
+    "default_icon": "images/sampleicon.png",
+    "default_title": "traveller's dialy"
+  },
   "permissions": [
     "tabs",
     "identity",
