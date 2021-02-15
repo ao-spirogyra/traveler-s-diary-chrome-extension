@@ -3,7 +3,7 @@ function fetchToApp (url) {
   const notIncludedInException = exceptionList.every((exceptionUrl) => {
     return !url.startsWith(exceptionUrl);
   });
-  const access_token = localStorage.getItem('traveller\'s-dialy-token')
+  const access_token = localStorage.getItem('gyazo-access-token')
   const json = { accessToken: access_token }
   if (notIncludedInException) {
     fetch(`https://dry-thicket-62282.herokuapp.com/puppeteer?url=${url}`, {

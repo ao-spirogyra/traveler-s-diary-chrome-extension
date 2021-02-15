@@ -11,12 +11,14 @@
     "scripts":["src/background.js"],
     "persistent": true
   },
-  "permissions": [
-    "tabs"
-  ],
-  "options_page": "options.html",
+  "key": "dcdnegmkmmekdenamheodldpfopcbgnc",
   "browser_action": {
     "default_icon": "images/sampleicon.png",
     "default_title": "traveller's dialy"
-  }
+  },
+  "permissions": [
+    "tabs",
+    "identity",
+    "https://api.gyazo.com/"
+  ]
 }
