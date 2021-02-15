@@ -53,7 +53,7 @@ const getClientSecret = async () => {
   return clientSecret
 }
 
-const onOauthButtonClicked = ()=> {
+const onLinkButtonClicked = () => {
   const clientId = 'f25d2754cabdca35725e0bc8611f5d609fbbf334198c68476c6edda718ec6e12';
   const redirectUri = 'https://dcdnegmkmmekdenamheodldpfopcbgnc.chromiumapp.org';
   chrome.identity.launchWebAuthFlow({
@@ -84,8 +84,22 @@ const onOauthButtonClicked = ()=> {
           localStorage.setItem('gyazo-access-token', res['access_token'])
       }
     })
+    location.reload()
   })
 }
+const onUnlinkButtonClicked = () => {
+  localStorage.removeItem('gyazo-access-token');
+  window.open('https://gyazo.com/oauth/authorized_applications');
+  location.reload()
+}
 
-const oauthButton = document.getElementById('oauth');
-oauthButton.addEventListener('click', onOauthButtonClicked);
+const linkButton = document.createElement('input');
+linkButton.setAttribute('type','button');
+if (localStorage.getItem('gyazo-access-token') == null) {
+  linkButton.setAttribute('value', 'gyazoと連携させる');
+  linkButton.addEventListener('click', onLinkButtonClicked);
+} else {
+  linkButton.setAttribute('value', 'gyazoとの連携を解除する');
+  linkButton.addEventListener('click', onUnlinkButtonClicked);
+}
+document.getElementById('oauth').appendChild(linkButton)
